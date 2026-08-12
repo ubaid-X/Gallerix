@@ -1,98 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/src/css/style.css"
-</head>
-<body>
-   <header>
-    <nav">
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
+  <!-- padding =>  it will prevent the last gallery images from being hidden behind the footer. -->
+  <body class="pb-20">   
+    <header>
+      <nav>
         <!-- logo -->
-        <a href="" class="text-3xl text-blue-500 block p-4 font-sans font-bold">Gallerix</a>
-    </nav>
-    <div class="mx-auto w-max">
-        <h1 class=" md:4xl lg:text-6xl font-semibold text-2xl">Simple Image Gallery</h1>
-        <p class="my-2 text-sm md:text-xl lg:text-2xl text-gray-500 mx-auto w-max">Explore beautiful potography with Gallerix</p>
-    </div>
-   </header>
+        <a href="" class="text-3xl text-blue-500 block p-4 font-sans font-bold"
+          >Gallerix</a
+        >
+      </nav>
 
-   <!-- main part -->
+      <!-- section about the gallery info -->
+      <div class="mx-auto w-max">
+        <h1 class="md:text-4xl lg:text-6xl font-semibold text-2xl">
+          Simple Image Gallery
+        </h1>
+        <p
+          class="my-2 text-sm md:text-xl lg:text-2xl text-gray-500 mx-auto w-max"
+        >
+          Explore beautiful potography with Gallerix
+        </p>
+      </div>
+    </header>
+
+    <!-- main part -->
     <!-- button section -->
-     <section class="btn-sec flex justify-center p-5 flex-col md:flex-row lg:flex-row">
-         <button class="border border-blue-700 ml-14 rounded-2xl p-2 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2">Nature</button>
-         <button class="border border-blue-700 ml-14 rounded-2xl p-2 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2">All</button>
-         <button class="border border-blue-700 ml-14 rounded-2xl p-2 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2">Architecture</button>
-        <button class="border border-blue-700 ml-14 rounded-2xl p-2 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2">Urban</button>
-        <button class="border border-blue-700 ml-14 rounded-2xl p-2 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2">Cars</button>
-     </section>
+    <section
+      class="btn-sec flex justify-center p-5 flex-col md:flex-row lg:flex-row"
+    >
+      <button
+        class=" btn-all border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
+      >
+        All
+      </button>
+      <button
+        class="btn-nature border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
+      >
+        Nature
+      </button>
+      <button
+        class="btn-arch border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
+      >
+        Architecture
+      </button>
+      <button
+        class="btn-urban border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
+      >
+        Urban
+      </button>
+      <button
+        class="btn-car border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
+      >
+        Cars
+      </button>
+    </section>
 
-     <!-- card sections -->
-     <section class="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2 lg:gap-3 p-4 md:p-8 lg:p-16 ">
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
+    <!-- card sections -->
 
+    <section
+      class="cards-container columns-1 md:columns-2 lg:columns-3 gap-4 transition-opacity duration-300"
+    ></section>
 
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-        <div class="card container mx-auto hover:shadow-sm hover:scale-110 transition-all duration-700 ">
-            <img class="rounded-2xl w-full h-auto object-cover" src="./public/images/download.jpeg" alt="">
-        </div>
-     </section>
-     
+    <!-- card template -->
+    <template class="card-template">
+      <div
+        class="card break-inside-avoid mb-4 overflow-hidden rounded-2xl shadow-2xl">
+        <img
+          class="card-img rounded-2xl w-full h-auto object-cover block transition-transform duration-500 hover:scale-105"
+          src=""
+          alt="Image"
+        />
+      </div>
+    </template>
 
-     <!-- footer  -->
-      <footer class="text-white bg-blue-700  h-20 mt-3 flex justify-center items-center">
-        <p><span class="font-bold text-2xl">Gallerix</span> build with ❤ by <a class="hover:underline font-bold" href="https://github.com/ubaid-X">Ubaidullah</a></p>
-      </footer>
+    <!-- footer  -->
+    <footer
+      class="text-white bg-blue-700 h-20 mt-3 flex justify-center items-center fixed bottom-0 left-0 w-full"
+    >
+      <p>
+        <span class="font-bold text-2xl">Gallerix</span> build with ❤ by
+        <a class="hover:underline font-bold" href="https://github.com/ubaid-X"
+          >Ubaidullah</a
+        >
+      </p>
+    </footer>
 
-
-
-<script type="module" src="/src/main.js"></script>
-</body>
-</html> 
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
