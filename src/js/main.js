@@ -101,6 +101,7 @@ let GalleryImages =
 let template = document.querySelector(".card-template");
 let container = document.querySelector(".cards-container");
 
+// function to get the data and append it to the container
 let getData = (val) => {
     let cardClone = document.importNode(template.content, true);
     cardClone.querySelector(".card-img").src = val.img;
@@ -108,6 +109,8 @@ let getData = (val) => {
     container.appendChild(cardClone);
 }
 
+
+// function to assign data based on the keyword
 let assignData = (keyword) => {
     container.classList.add("opacity-0");
 
@@ -127,10 +130,8 @@ let assignData = (keyword) => {
 
         
   
-
+// funtioanlity on clicking the buttons
 document.querySelector(".btn-sec").addEventListener("click", (e) => {
-    console.log(e.target);
-    console.log(e.currentTarget);
     if (e.target.classList.contains("btn-all")) {
         assignData("all");
     } else if (e.target.classList.contains("btn-nature")) {
@@ -141,6 +142,28 @@ document.querySelector(".btn-sec").addEventListener("click", (e) => {
         assignData("urban");
     } else if (e.target.classList.contains("btn-car")) {
         assignData("car");
+    }
+})
+
+container.addEventListener("click", (e) => {
+    if (e.target.classList.contains("card-img")) {
+        document.querySelector(".image-modal img").src = e.target.src;
+        document.querySelector(".image-overlay").classList.remove("hidden");
+        document.querySelector(".image-modal").classList.add("active");
+    }
+})
+
+document.querySelector(".image-overlay").addEventListener("click", (e) => {
+    if (e.target.classList.contains("image-overlay")) {
+        document.querySelector(".image-overlay").classList.add("hidden");
+        document.querySelector(".image-modal").classList.remove("active");
+    }
+})
+
+document.querySelector(".close-btn").addEventListener("click", (e) => {
+    if (e.target.classList.contains("close-btn")) {
+        document.querySelector(".image-overlay").classList.add("hidden");
+        document.querySelector(".image-modal").classList.remove("active");
     }
 })
 

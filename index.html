@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/src/css/style.css" />
   </head>
   <!-- padding =>  it will prevent the last gallery images from being hidden behind the footer. -->
-  <body class="pb-20">   
+  <bo class="pb-20 bg-black/5">   
     <header>
       <nav>
         <!-- logo -->
@@ -30,9 +30,10 @@
     </header>
 
     <!-- main part -->
+     <main>
     <!-- button section -->
     <section
-      class="btn-sec flex justify-center p-5 flex-col md:flex-row lg:flex-row"
+      class="btn-sec flex justify-center p-5 flex-col md:flex-row lg:flex-row "
     >
       <button
         class=" btn-all border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
@@ -79,6 +80,16 @@
       </div>
     </template>
 
+    // image modal for showing the image in large size when clicked on it.
+    <div class="image-overlay fixed inset-0 bg-black/70 hidden  flex items-center justify-center z-10">
+    <div class="image-modal  w-2xl h-xl relative  flex items-center justify-center ">
+        <button class="close-btn bg-red-500 text-white w-[50px] h-[50px] rounded-sm top-0 right-0 absolute">×</button>
+        <img class="w-full h-auto  object-cover" src="" alt="">
+    </div>
+    </div>
+    
+
+  </main>
     <!-- footer  -->
     <footer
       class="text-white bg-blue-700 h-20 mt-3 flex justify-center items-center fixed bottom-0 left-0 w-full"
