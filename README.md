@@ -1,5 +1,6 @@
 # Gallerix
 
+#### live demo click here: https://gallerix.vercel.app/
 Gallerix is a responsive image gallery built with HTML, Tailwind CSS, and JavaScript. The project allows users to browse a collection of photography, filter images by category, open images in a full screen modal, and navigate between images using buttons or keyboard controls.
 
 The project was built as a practical frontend project to strengthen DOM manipulation, event handling, array methods, dynamic rendering, responsive design, and user interaction.
