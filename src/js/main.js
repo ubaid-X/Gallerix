@@ -100,6 +100,8 @@ const GalleryImages =
 
 const template = document.querySelector(".card-template");
 const container = document.querySelector(".cards-container");
+let currGalleryImages = [];  // this variable will hold the current gallery images based on the selected category
+let curIndex = 0;   // this variable will hold the current index of the image in the modal
 
 // function to get the data and append it to the container
 const getData = (val) => {
@@ -117,10 +119,15 @@ const assignData = (keyword) => {
     setTimeout(() => {
         container.innerHTML = "";
 
-        GalleryImages.forEach((val) => {
+        // filter the images based on the keyword and assign it to the currGalleryImages variable
+        currGalleryImages = GalleryImages.filter((val) => {
             if (keyword === "all" || val.category === keyword) {
-                getData(val);
+                return val;
             }
+        });
+        // loop through the currGalleryImages and call the getData function to append the images to the container
+        currGalleryImages.forEach((val) => {
+            getData(val);
         });
 
         container.classList.remove("opacity-0");
@@ -137,14 +144,14 @@ document.querySelector(".btn-sec").addEventListener("click", (e) => {
         return;
     }
 
-    // it is for adding classes on active button and remove from all others
     const buttons = document.querySelectorAll(".gallery-filter");
+    // remove the classes from all buttons and add to the clicked button
     buttons.forEach((val) => {
-            val.classList.remove("text-white", "bg-blue-700");
-        
+            val.classList.remove("text-white", "bg-blue-700");  
     });
     e.target.classList.add("text-white", "bg-blue-700");
 
+    // check which button is clicked and call the assignData function with the respective keyword
     if (e.target.classList.contains("btn-all")) {
         assignData("all");
     } else if (e.target.classList.contains("btn-nature")) {
@@ -171,16 +178,41 @@ container.addEventListener("click", (e) => {
 document.querySelector(".image-overlay").addEventListener("click", (e) => {
     if (e.target.classList.contains("image-overlay")) {
         document.querySelector(".image-overlay").classList.add("hidden");
-        document.querySelector(".image-modal").classList.remove("active");
     }
 })
 
 // functionality to close the modal on clicking the overlay or close button
 document.querySelector(".close-btn").addEventListener("click", (e) => {
-    if (e.target.classList.contains("close-btn")) {
         document.querySelector(".image-overlay").classList.add("hidden");
-        document.querySelector(".image-modal").classList.remove("active");
-    }
 })
+
+// functionality to change the image on clicking the next and previous buttons
+document.querySelector(".prev-btn").addEventListener("click", (e) => {
+    curIndex--;
+    if (curIndex < 0) {
+        curIndex = currGalleryImages.length - 1;
+    }
+    document.querySelector(".image-modal img").src = currGalleryImages[curIndex].img;
+});
+
+// functionality to change the image on clicking the next and previous buttons
+document.querySelector(".next-btn").addEventListener("click", (e) => {
+    curIndex++;
+    if (curIndex >= currGalleryImages.length) {
+        curIndex = 0;
+    }
+    document.querySelector(".image-modal img").src = currGalleryImages[curIndex].img;
+});
+
+// functionality to change the image on pressing the left and right arrow keys
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+        document.querySelector(".prev-btn").click();
+    } else if (e.key === "ArrowRight") {
+        document.querySelector(".next-btn").click();
+    } else if (e.key === "Escape") {
+        document.querySelector(".close-btn").click();
+    }
+});
 
 assignData("all");

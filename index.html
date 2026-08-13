@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Gallerix</title>
+    <!-- // meta tags for SEO -->
+    <meta name="description" content="Gallerix is a simple image gallery built with HTML, tailwind CSS, and JavaScript. It allows users to explore beautiful photography and filter images by categories such as nature, architecture, urban, and cars." />
+    <meta name="keywords" content="Gallerix, image gallery, photography, nature, architecture, urban, cars, HTML, CSS, JavaScript" />
+    <meta name="author" content="Ubaidullah" />
+    <!-- meta tags for social media sharing -->
+    <meta property="og:title" content="Gallerix - Simple Image Gallery" />
+    <meta property="og:description" content="Gallerix is a simple image gallery built with HTML, tailwind CSS, and JavaScript. It allows users to explore beautiful photography and filter images by categories such as nature, architecture, urban, and cars." />
+    <meta property="og:image" content="/src/images/gallerix-preview.jpg" />
+
     <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
   </head>
   <!-- padding =>  it will prevent the last gallery images from being hidden behind the footer. -->
   <body class="pb-20">
@@ -84,22 +95,25 @@
       <!-- // image modal for showing the image in large size when clicked on it. -->
 
       <div
-        class="image-overlay fixed inset-0 bg-black/70 hidden flex items-center justify-center z-10"
+        class="image-overlay fixed inset-0 bg-black/50 hidden flex items-center justify-center z-10"
       >
         <div
           class="image-modal relative flex items-center justify-center max-w-[90vw] max-h-[90vh]"
         >
           <button
-            class="close-btn absolute top-0 right-0 bg-red-500 text-white w-10 h-10 rounded-sm text-2xl"
+            class="close-btn absolute top-0 right-0 bg-red-500 text-white w-10 h-10 rounded-sm text-2xl" aria-label="close modal"
           >
-            ×
+            <i class="fa-solid fa-xmark"></i>
           </button>
+          <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 p-4 text-2xl text-white hover:bg-white/10 border-0 z-20" aria-label="previous image"><i class="fa-solid fa-arrow-left"></i></button>
 
           <img
-            class="max-w-full max-h-[90vh] object-contain rounded-xl"
+            class="  max-w-[90vw] max-h-[85vh] object-contain rounded-xl"
             src=""
             alt="image"
           />
+          <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 p-4 text-2xl text-white hover:bg-white/10 border-0 z-20" aria-label="next image"><i class="fa-solid fa-arrow-right"></i></button>
+
         </div>
       </div>
     </main>
