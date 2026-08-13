@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/src/css/style.css" />
   </head>
   <!-- padding =>  it will prevent the last gallery images from being hidden behind the footer. -->
-  <bo class="pb-20 bg-black/5">   
+  <body class="pb-20">
     <header>
       <nav>
         <!-- logo -->
@@ -24,82 +24,94 @@
         <p
           class="my-2 text-sm md:text-xl lg:text-2xl text-gray-500 mx-auto w-max"
         >
-          Explore beautiful potography with Gallerix
+          Explore beautiful photography with Gallerix
         </p>
       </div>
     </header>
 
     <!-- main part -->
-     <main>
-    <!-- button section -->
-    <section
-      class="btn-sec flex justify-center p-5 flex-col md:flex-row lg:flex-row "
-    >
-      <button
-        class=" btn-all border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
+    <main>
+      <!-- button section -->
+      <section
+        class="btn-sec  flex flex-wrap justify-center gap-3 p-5"
       >
-        All
-      </button>
-      <button
-        class="btn-nature border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
-      >
-        Nature
-      </button>
-      <button
-        class="btn-arch border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
-      >
-        Architecture
-      </button>
-      <button
-        class="btn-urban border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
-      >
-        Urban
-      </button>
-      <button
-        class="btn-car border border-blue-700 ml-14 rounded-2xl p-3 hover:bg-blue-700 hover:text-white transition-all duration-100 my-2"
-      >
-        Cars
-      </button>
-    </section>
+        <button
+          class="btn-all gallery-filter border  border-blue-700  rounded-2xl p-3 bg-blue-700 text-white transition-all duration-100 my-2"
+        >
+          All
+        </button>
+        <button
+          class="btn-nature gallery-filter border border-blue-700  rounded-2xl p-3 transition-all duration-100 my-2"
+        >
+          Nature
+        </button>
+        <button
+          class="btn-arch gallery-filter  border border-blue-700  rounded-2xl p-3  transition-all duration-100 my-2"
+        >
+          Architecture
+        </button>
+        <button
+          class="btn-urban gallery-filter  border border-blue-700  rounded-2xl p-3  transition-all duration-100 my-2"
+        >
+          Urban
+        </button>
+        <button
+          class="btn-car gallery-filter  border border-blue-700 rounded-2xl p-3 transition-all duration-100 my-2"
+        >
+          Cars
+        </button>
+      </section>
 
-    <!-- card sections -->
+      <!-- card sections -->
 
-    <section
-      class="cards-container columns-1 md:columns-2 lg:columns-3 gap-4 transition-opacity duration-300"
-    ></section>
+      <section
+        class="cards-container columns-1 md:columns-2 lg:columns-3 gap-4 transition-opacity duration-300"
+      ></section>
 
-    <!-- card template -->
-    <template class="card-template">
+      <!-- card template -->
+      <template class="card-template">
+        <div
+          class="card break-inside-avoid mb-4 overflow-hidden rounded-2xl shadow-2xl"
+        >
+          <img
+            class="card-img rounded-2xl w-full h-auto object-cover block transition-transform duration-500 hover:scale-105"
+            src=""
+            alt="Image"
+          />
+        </div>
+      </template>
+
+      <!-- // image modal for showing the image in large size when clicked on it. -->
+
       <div
-        class="card break-inside-avoid mb-4 overflow-hidden rounded-2xl shadow-2xl">
-        <img
-          class="card-img rounded-2xl w-full h-auto object-cover block transition-transform duration-500 hover:scale-105"
-          src=""
-          alt="Image"
-        />
+        class="image-overlay fixed inset-0 bg-black/70 hidden flex items-center justify-center z-10"
+      >
+        <div
+          class="image-modal relative flex items-center justify-center max-w-[90vw] max-h-[90vh]"
+        >
+          <button
+            class="close-btn absolute top-0 right-0 bg-red-500 text-white w-10 h-10 rounded-sm text-2xl"
+          >
+            ×
+          </button>
+
+          <img
+            class="max-w-full max-h-[90vh] object-contain rounded-xl"
+            src=""
+            alt="image"
+          />
+        </div>
       </div>
-    </template>
-
-    <!-- // image modal for showing the image in large size when clicked on it. -->
-    <div class="image-overlay fixed inset-0 bg-black/70 hidden  flex items-center justify-center z-10">
-    <div class="image-modal  w-2xl h-xl relative  flex items-center justify-center ">
-        <button class="close-btn bg-red-500 text-white w-[50px] h-[50px] rounded-sm top-0 right-0 absolute">×</button>
-        <img class="w-full h-auto  object-cover" src="" alt="">
-    </div>
-    </div>
-    
-
-  </main>
+    </main>
     <!-- footer  -->
     <footer
       class="text-white bg-blue-700 h-20 mt-3 flex justify-center items-center fixed bottom-0 left-0 w-full"
     >
-      <p>
-        <span class="font-bold text-2xl">Gallerix</span> build with ❤ by
-        <a class="hover:underline font-bold" href="https://github.com/ubaid-X"
-          >Ubaidullah</a
-        >
-      </p>
+      <p class="text-sm md:text-base">
+    <span class="font-bold text-xl">Gallerix</span>
+    built with ❤ by
+    <a class="hover:underline font-bold" href="https://github.com/ubaid-X" alt="github link" target="_blank">Ubaidullah</a>
+    </p>
     </footer>
 
     <script type="module" src="/src/js/main.js"></script>

@@ -1,4 +1,4 @@
-let GalleryImages =
+const GalleryImages =
     [
         {
             img: `/images/nature1.jfif`,
@@ -26,27 +26,27 @@ let GalleryImages =
         },
         {
             img: `/images/arch1.jfif`,
-            category: "architechture"
+            category: "architecture"
         },
         {
             img: `/images/arch2.jfif`,
-            category: "architechture"
+            category: "architecture"
         },
         {
             img: `/images/arch3.jfif`,
-            category: "architechture"
+            category: "architecture"
         },
         {
             img: `/images/arch4.jfif`,
-            category: "architechture"
+            category: "architecture"
         },
         {
             img: `/images/arch5.jfif`,
-            category: "architechture"
+            category: "architecture"
         },
         {
             img: `/images/arch6.jfif`,
-            category: "architechture"
+            category: "architecture"
         },
         {
             img: `/images/urban1.jfif`,
@@ -98,12 +98,12 @@ let GalleryImages =
         }
     ];
 
-let template = document.querySelector(".card-template");
-let container = document.querySelector(".cards-container");
+const template = document.querySelector(".card-template");
+const container = document.querySelector(".cards-container");
 
 // function to get the data and append it to the container
-let getData = (val) => {
-    let cardClone = document.importNode(template.content, true);
+const getData = (val) => {
+    const cardClone = document.importNode(template.content, true);
     cardClone.querySelector(".card-img").src = val.img;
     cardClone.querySelector(".card-img").alt = `${val.category} image`;
     container.appendChild(cardClone);
@@ -111,7 +111,7 @@ let getData = (val) => {
 
 
 // function to assign data based on the keyword
-let assignData = (keyword) => {
+const assignData = (keyword) => {
     container.classList.add("opacity-0");
 
     setTimeout(() => {
@@ -132,12 +132,25 @@ let assignData = (keyword) => {
   
 // funtioanlity on clicking the buttons
 document.querySelector(".btn-sec").addEventListener("click", (e) => {
+    // if the button is not select so return
+    if (!e.target.classList.contains("gallery-filter")) {
+        return;
+    }
+
+    // it is for adding classes on active button and remove from all others
+    const buttons = document.querySelectorAll(".gallery-filter");
+    buttons.forEach((val) => {
+            val.classList.remove("text-white", "bg-blue-700");
+        
+    });
+    e.target.classList.add("text-white", "bg-blue-700");
+
     if (e.target.classList.contains("btn-all")) {
         assignData("all");
     } else if (e.target.classList.contains("btn-nature")) {
         assignData("nature");
     } else if (e.target.classList.contains("btn-arch")) {
-        assignData("architechture");
+        assignData("architecture");
     } else if (e.target.classList.contains("btn-urban")) {
         assignData("urban");
     } else if (e.target.classList.contains("btn-car")) {
@@ -145,6 +158,7 @@ document.querySelector(".btn-sec").addEventListener("click", (e) => {
     }
 })
 
+// functionality to open the modal on clicking the image
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("card-img")) {
         document.querySelector(".image-modal img").src = e.target.src;
@@ -153,6 +167,7 @@ container.addEventListener("click", (e) => {
     }
 })
 
+// functionality to close the modal on clicking the overlay or close button
 document.querySelector(".image-overlay").addEventListener("click", (e) => {
     if (e.target.classList.contains("image-overlay")) {
         document.querySelector(".image-overlay").classList.add("hidden");
@@ -160,6 +175,7 @@ document.querySelector(".image-overlay").addEventListener("click", (e) => {
     }
 })
 
+// functionality to close the modal on clicking the overlay or close button
 document.querySelector(".close-btn").addEventListener("click", (e) => {
     if (e.target.classList.contains("close-btn")) {
         document.querySelector(".image-overlay").classList.add("hidden");
