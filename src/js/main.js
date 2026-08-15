@@ -215,4 +215,5 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+// call the assignData function with the keyword "all" to display all the images on page load
 assignData("all");
